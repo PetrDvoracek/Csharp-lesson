@@ -32,6 +32,7 @@ public IEnumerator<int> GetEnumerator()
        yeld return val
    }
 }
+ruzne enumeratory - vytvorit ho ve tride a volani <inst>.Range(2,7) napr.
 
 
 
@@ -47,6 +48,19 @@ Reset - muze se volat rucne, hodi ukazatel na zacatek, nemusi byt nic
 vyuziva IEnumerator a IEnumerable. Je vyhodne ho pouzit zejmena pri prochazeni stromu atd, tvorba vlastni logiky.
 
 yeild - pro Enumerator, generace
+
+implementace foreach:
+```
+IEnumerator<int> myEnum = nums.GetEnumerator();
+while (myEnum.MoveNext())
+{
+Console.WriteLine(myEnum.Current)
+}
+```
+Dictionary - hashtable
+sortedList - array
+SortedDictionary - tree
+
 
 ## LinkedList<T>
 Lepsi meneni vnitrnich dat, nepresouvaji se vsechny prvky
