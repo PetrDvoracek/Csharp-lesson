@@ -1,0 +1,58 @@
+
+
+# Collections
+
+jazyk c# umi jedinou kolekci - pole. Vyziva ale kolekce z .NET
+zakladem je IEnumerable diky kteremu se da prochazet prvek foreachem
+## IComparable<>
+porovnavani veci v listu, mozna i serazovani
+
+## IComparer<>
+
+implementace porovnavani je mimo tridu ktera je porovnavana. to same jako IComparable akorat muze byt mimo tridu.
+
+rychle vytvorim
+```csharp
+IComparer<int> c = Comparer<int>.Create((x, y) => {
+
+return -1
+}
+```
+
+proto abych umoznil int[].Count, musim pretypovat na ICollection<int>
+
+## IEnumerable
+Pro prochazeni pomoci foreach
+2 implementace, ta druha je pro .NET starsi nez 2.0
+```
+public IEnumerator<int> GetEnumerator()
+{
+   foreach(int val in nums)
+   {
+       yeld return val
+   }
+}
+
+
+
+## IEnumerator
+MoveNext - zavolanim by se mel posunout ukazatel na dalsi hodnotu, pokud to jde. pokud nejde return false pokud jde raturn true.
+Current - cte hodnotu.
+if MoveNext return true - konec iterovani
+Dispose - zavirani souboru, nemusi byt nic
+Reset - muze se volat rucne, hodi ukazatel na zacatek, nemusi byt nic
+
+## foreach 
+
+vyuziva IEnumerator a IEnumerable. Je vyhodne ho pouzit zejmena pri prochazeni stromu atd, tvorba vlastni logiky.
+
+yeild - pro Enumerator, generace
+
+## LinkedList<T>
+Lepsi meneni vnitrnich dat, nepresouvaji se vsechny prvky
+## List<T>
+nevyhoda musi se pri zmene dat presunout vsechna.. je to seznam pointru na objekty
+
+
+
+
