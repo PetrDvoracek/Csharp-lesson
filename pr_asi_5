@@ -67,6 +67,37 @@ Lepsi meneni vnitrnich dat, nepresouvaji se vsechny prvky
 ## List<T>
 nevyhoda musi se pri zmene dat presunout vsechna.. je to seznam pointru na objekty
 
+# Extension metody
+
+mam tridu kterou nemuzu upravit a jeji instance a b napriklad to jsou vektory R2. pro to si muzu napsat statickou metodu do ktere tyto dva vstupuji. To ale nechci, chci to pridat do objbektu - **extension** metoda. tato se definuje mimo tridu ve ktere ma byt.
+
+```csharp
+static class PointExtension
+{
+public static double Distance(this Point a, Point b)
+{
+return Math.Sqrt(Math.Pow(a.x-b.x,2)... implementace
+}
+}
+```
+
+ve visualstudiu se extension metoda pozna podle cerne sipky dolu. Napr int[].Where(labda) filtruje pole int
+```csharp
+int[]nums...
+bool isLower = nums.All(x=>x<10);
+
+IEnumerable<int> a = nums.Where(x => x>5);
+
+//toto se nespusti dokud nebudu sahat na a
+
+foreach(int m in b)
+{
+}
+//da se tomu zabranit pridanim .ToList() napr pri sahani do databaze.
+IEnumerable<int> b = a.Select(x = > x*5).ToList();
+```
+je vyhoda ze je to definovano bokem. 
+vznikne link slouzici pro praci s kolekcemi. 
 
 
 
