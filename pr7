@@ -1,0 +1,9 @@
+# [Stream](https://docs.microsoft.com/cs-cz/dotnet/api/system.io.stream?view=netframework-4.7.2)
+
+MemortStream - misto ukladani souboru na disk se ulozi do RAM
+NetworkStream - po siti
+
+
+pro zapsani textu je treba streamwriter
+
+StreamWriter funguje jako buffer, aby zbytecne moc nezapisoval
